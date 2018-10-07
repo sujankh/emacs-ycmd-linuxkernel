@@ -1,6 +1,5 @@
 # emacs-ycmd-linuxkernel
+============================================================
+[Work in progress] Tweaks to ycmd for linux kernel code navigation in Emacs
 
-Tweaks to ycmd for linux kernel code navigation in Emacs
-
-Test Test 1234
-
+The contents are as follows
