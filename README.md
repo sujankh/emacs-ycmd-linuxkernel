@@ -4,7 +4,7 @@ description: >-
   YCMD for Emacs.
 ---
 
-# emacs-ycmd-linuxkernel
+# emacs-ycmd Linux Kernel
 
 ## Building YCMD and fetching its dependencies
 
