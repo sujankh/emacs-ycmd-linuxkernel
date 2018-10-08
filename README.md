@@ -1,10 +1,14 @@
-# emacs-ycmd-linuxkernel
+---
+description: >-
+  This document will go through my setup for linux kernel code navigation using
+  YCMD for Emacs.
+---
 
-\[Work in Progress\] This document will go through my setup for linux kernel code navigation using YCMD for Emacs.
+# emacs-ycmd-linuxkernel
 
 ## Building YCMD and fetching its dependencies
 
-Cloned YCMD from its official github page and built it. I had to upgrade my cmkae and install libpython 3.
+Cloned YCMD from its official github page and built it. I had to upgrade my cmake and install libpython 3.
 
 ### cmake 3
 
@@ -78,10 +82,10 @@ In the kernel, there are some directories where there are only header files and 
 
 ## Making header file navigation work
 
-ycmd optionally allows users to define compilation flags for each files in the source tree by adding a file named `.ycm_extra_conf.py` in the project root. I added a custom [https://github.com/sujankh/emacs-ycmd-linuxkernel/blob/master/.ycm\_extra\_conf.py](https://github.com/sujankh/emacs-ycmd-linuxkernel/blob/master/.ycm_extra_conf.py) in my linux kernel root directory and this fixed the problem. Here is what the file does:
+ycmd optionally allows users to define compilation flags for each files in the source tree by adding a file named `.ycm_extra_conf.py` in the project root. I added a custom [https://github.com/sujankh/emacs-ycmd-linuxkernel/blob/master/.ycm\_extra\_conf.py](https://github.com/sujankh/emacs-ycmd-linuxkernel/blob/master/.ycm_extra_conf.py) in my linux kernel root directory and this fixed the problem. Here is what the file does \(the code is commented as well\):
 
 * I curated the default `flags` variable by looking at one entry in the generated `compile_commands.json` file and removing file-name specific options.
-* Updated `Settings` function to return those default flags if the compilation database did not have an entry for the file.
+* Updated `Settings` function to return those default flags if the compilation database did not have an entry for the file. This made sure those header files \(which did not have any source files as siblings\) got a compilation flag making navigation possible.
 
 [https://github.com/Valloric/YouCompleteMe\#option-2-provide-the-flags-manually](https://github.com/Valloric/YouCompleteMe#option-2-provide-the-flags-manually) has more details on how the `.ycm_extra_conf.py` file works.
 
