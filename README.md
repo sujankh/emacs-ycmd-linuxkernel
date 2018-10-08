@@ -1,9 +1,3 @@
----
-description: >-
-  This document will go through my setup for linux kernel code navigation using
-  YCMD for Emacs.
----
-
 # emacs-ycmd Linux Kernel
 
 ## Building YCMD and fetching its dependencies
