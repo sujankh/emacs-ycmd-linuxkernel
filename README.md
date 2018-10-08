@@ -87,5 +87,5 @@ ycmd optionally allows users to define compilation flags for each files in the s
 * I curated the default `flags` variable by looking at one entry in the generated `compile_commands.json` file and removing file-name specific options.
 * Updated `Settings` function to return those default flags if the compilation database did not have an entry for the file. This made sure those header files \(which did not have any source files as siblings\) got a compilation flag making navigation possible.
 
-[https://github.com/Valloric/YouCompleteMe\#option-2-provide-the-flags-manually](https://github.com/Valloric/YouCompleteMe#option-2-provide-the-flags-manually) has more details on how the `.ycm_extra_conf.py` file works.
+[https://github.com/Valloric/YouCompleteMe\#option-2-provide-the-flags-manually](https://github.com/Valloric/YouCompleteMe#option-2-provide-the-flags-manually) has more details on how the `.ycm_extra_conf.py` file works. 
 
